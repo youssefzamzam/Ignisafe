@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ignisafe/auth/manager/auth_cubit.dart';
 import 'package:ignisafe/auth/manager/auth_state.dart';
 import 'package:ignisafe/core/utils/custom_snackbar.dart';
-import 'package:ignisafe/dashboard/dashboard_screen.dart';
 
 
 class AuthViewBody extends StatefulWidget {
@@ -71,10 +69,10 @@ class _AuthViewBodyState extends State<AuthViewBody> {
                     message: 'Logged in successfully.',
                     type: SnackBarType.success,
                   );
-                  Navigator.pushReplacement(
-                    context,
-                    CupertinoPageRoute(builder: (context) => DashboardScreen(token: state.token, role: '',)),
-                  );
+                  // Navigator.pushReplacement(
+                  //   context,
+                  //   CupertinoPageRoute(builder: (context) => DashboardScreen(token: state.token, role: '',)),
+                  // );
                 } else if (state is AuthError) {
                   CustomSnackBar.show(
                     context,

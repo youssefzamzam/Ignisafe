@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ignisafe/auth/presentation/views/auth_view.dart';
 import 'package:ignisafe/core/helper/on_generate_route.dart';
 import 'package:ignisafe/core/utils/themes.dart';
-import 'package:ignisafe/splash/splash_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
