@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ignisafe/auth/presentation/views/auth_view.dart';
 import 'package:ignisafe/core/helper/on_generate_route.dart';
 import 'package:ignisafe/core/utils/themes.dart';
 import 'package:ignisafe/splash/splash_view.dart';
@@ -28,14 +29,14 @@ class _IgnisafeState extends State<Ignisafe> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(428, 926),
       minTextAdapt: true,
       splitScreenMode: true,
       builder:
           (context, _) => MaterialApp(
             debugShowCheckedModeBanner: false,
             onGenerateRoute: onGenerateRoute,
-            initialRoute: SplashView.routeName,
+            initialRoute: AuthView.routeName,
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode: _themeMode,

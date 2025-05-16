@@ -17,11 +17,10 @@ final ThemeData lightTheme = ThemeData(
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   fontFamily: 'Projectfont',
-
   primaryColor: AppColors.primaryColor,
   textTheme: const TextTheme(bodyMedium: TextStyle(fontFamily: 'Projectfont')),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.primaryColor,
-    titleTextStyle: TextStyle(color: Colors.white, fontFamily: 'Projectfont'),
-  ),
+  primaryColorDark: AppColors.scaffoldDarkColor,
+  scaffoldBackgroundColor: AppColors.scaffoldDarkColor,
+  useMaterial3: true,
 );
+

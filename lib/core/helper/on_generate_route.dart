@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/cupertino.dart';
-import 'package:ignisafe/auth/auth_view.dart';
+import 'package:ignisafe/auth/presentation/views/auth_view.dart';
 import 'package:ignisafe/loading_view.dart';
 import 'package:ignisafe/splash/splash_view.dart';
 

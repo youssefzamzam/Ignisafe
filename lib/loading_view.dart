@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ignisafe/auth/auth_view.dart';
+import 'package:ignisafe/auth/presentation/views/auth_view.dart';
 
 class LoadView extends StatelessWidget {
   const LoadView({super.key});
