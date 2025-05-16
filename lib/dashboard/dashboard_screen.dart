@@ -5,7 +5,7 @@ class DashboardScreen extends StatelessWidget {
   final String token;
   final String role;
 
-  DashboardScreen({required this.token, required this.role});
+  const DashboardScreen({super.key, required this.token, required this.role});
 
   Future<void> _fetchProtectedData(BuildContext context) async {
     try {

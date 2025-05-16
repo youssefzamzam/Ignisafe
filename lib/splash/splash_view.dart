@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:ignisafe/loading_screen.dart';
+import 'package:ignisafe/loading_view.dart';
 import 'package:video_player/video_player.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
+
+  static const routeName = 'Splash';
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashViewState createState() => SplashViewState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashViewState extends State<SplashView> {
   late VideoPlayerController _controller;
   bool _hasNavigated = false; // Flag to prevent duplicate navigation
 
@@ -38,10 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToNextScreen() {
     if (!_hasNavigated && mounted) {
       _hasNavigated = true;
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoadPage()),
-      );
+      Navigator.of(context).pushReplacementNamed(LoadView.routeName);
     }
   }
 
@@ -56,12 +57,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: _controller.value.isInitialized
-            ? AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
-          child: VideoPlayer(_controller),
-        )
-            : const CircularProgressIndicator(),
+        child:
+            _controller.value.isInitialized
+                ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+                : const CircularProgressIndicator(),
       ),
     );
   }

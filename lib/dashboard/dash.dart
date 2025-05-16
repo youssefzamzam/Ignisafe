@@ -209,7 +209,7 @@ class _GasPerformanceHomePageState extends State<GasPerformanceHomePage> {
         borderRadius: BorderRadius.circular(36),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.6),
+            color: Colors.black.withAlpha(153),
             blurRadius: 8,
             offset: const Offset(0, 3),
           ),
@@ -458,7 +458,7 @@ class GaugePainter extends CustomPainter {
       final dotPaint = Paint()
         ..color = i < (percentage / 100 * 30).floor()
             ? const Color(0xFF4ADE80)
-            : const Color(0xFF4B5563).withOpacity(0.3)
+            : const Color(0xFF4B5563).withAlpha((0.3 * 255).round())
         ..style = PaintingStyle.fill;
 
       final dotRadius = 4.5;
@@ -483,7 +483,7 @@ class GaugePainter extends CustomPainter {
 
     // Draw inner arc background (remaining)
     final remainingArcPaint = Paint()
-      ..color = Colors.white.withOpacity(0.1)
+      ..color = Colors.white.withAlpha(25)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 

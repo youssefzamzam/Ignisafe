@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ignisafe/Zones.dart';
-import 'package:ignisafe/admin_dashboard.dart';
-import 'package:ignisafe/auth_screen.dart';
-import 'package:ignisafe/Alert_Details.dart';
-import 'package:ignisafe/dash.dart';
-import 'package:ignisafe/loading_screen.dart';
-import 'package:ignisafe/zone1.dart';
-import 'splash_screen.dart';
+import 'package:ignisafe/core/helper/on_generate_route.dart';
+import 'package:ignisafe/core/utils/themes.dart';
+import 'package:ignisafe/splash/splash_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(
-    ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, _) => const MyApp(),
-    ),
-  );
+  runApp(Ignisafe());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Ignisafe extends StatefulWidget {
+  const Ignisafe({super.key});
+
+  @override
+  State<Ignisafe> createState() => _IgnisafeState();
+}
+
+class _IgnisafeState extends State<Ignisafe> {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  void toggleTheme() {
+    setState(() {
+      _themeMode = _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // Start with SplashScreen, then navigate to LoadPage -> AuthScreen
-      home:GasLevelsScreen(),
-      routes: {
-        '/load': (context) => const LoadPage(), // Optional named route
-        '/auth': (context) => AuthScreen(),
-      },
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder:
+          (context, _) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: SplashView.routeName,
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            themeMode: _themeMode,
+            title: 'Ignisafe',
+          ),
     );
   }
 }

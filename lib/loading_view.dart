@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ignisafe/auth_screen.dart';
+import 'package:ignisafe/auth/auth_view.dart';
 
-class LoadPage extends StatelessWidget {
-  const LoadPage({super.key});
-
+class LoadView extends StatelessWidget {
+  const LoadView({super.key});
+  static const routeName = 'LoadView';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,12 +11,8 @@ class LoadPage extends StatelessWidget {
       body: NotificationListener<ScrollNotification>(
         onNotification: (scrollNotification) {
           if (scrollNotification is ScrollEndNotification) {
-            if (scrollNotification.metrics.pixels ==
-                scrollNotification.metrics.maxScrollExtent) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  AuthScreen()),
-              );
+            if (scrollNotification.metrics.pixels == scrollNotification.metrics.maxScrollExtent) {
+              Navigator.of(context).pushNamed(AuthView.routeName);
             }
           }
           return true;
@@ -31,13 +27,7 @@ class LoadPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Image.asset(
-                      'assets/images/Frame 36.png',
-                      height: 120,
-                      scale: 2,
-                    ),
-                  ),
+                  Center(child: Image.asset('assets/images/Frame 36.png', height: 120, scale: 2)),
                   const SizedBox(height: 40),
 
                   // Detect Early - WHITE
@@ -52,10 +42,7 @@ class LoadPage extends StatelessWidget {
                   _buildFeatureText('Stay Safe', color: Color(0xFAD60A0A)),
 
                   const SizedBox(height: 5),
-                  Center(
-                    child: Image.asset('assets/images/Frame 68.png'
-                    ,scale: 3,)
-                  ),
+                  Center(child: Image.asset('assets/images/Frame 68.png', scale: 3)),
                 ],
               ),
             ),
@@ -98,10 +85,7 @@ class SignInPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/Frame 36.png',
-              height: 100,
-            ),
+            Image.asset('assets/images/Frame 36.png', height: 100),
             const SizedBox(height: 40),
           ],
         ),

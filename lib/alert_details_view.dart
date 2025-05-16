@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AlertDetailsApp());
+  runApp(const AlertDetailsView());
 }
 
-class AlertDetailsApp extends StatelessWidget {
-  const AlertDetailsApp({super.key});
+class AlertDetailsView extends StatelessWidget {
+  const AlertDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {

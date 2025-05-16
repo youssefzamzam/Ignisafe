@@ -105,11 +105,7 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                   onPressed: () {
                     // Implement back navigation if needed
                   },
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Color(0xFF9CA3AF),
-                    size: 18,
-                  ),
+                  child: const Icon(Icons.arrow_back, color: Color(0xFF9CA3AF), size: 18),
                 ),
               ),
               const SizedBox(height: 24),
@@ -144,7 +140,10 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 12,
+                                      vertical: 6,
+                                    ),
                                     minimumSize: Size.zero,
                                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                   ),
@@ -203,11 +202,17 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                         children: const [
                                           Text(
                                             '3:00 PM',
-                                            style: TextStyle(color: Color(0xFF6B6B6B), fontSize: 10),
+                                            style: TextStyle(
+                                              color: Color(0xFF6B6B6B),
+                                              fontSize: 10,
+                                            ),
                                           ),
                                           Text(
                                             '11-10-2024',
-                                            style: TextStyle(color: Color(0xFF6B6B6B), fontSize: 10),
+                                            style: TextStyle(
+                                              color: Color(0xFF6B6B6B),
+                                              fontSize: 10,
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -226,7 +231,10 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                               ),
                                               child: Icon(
                                                 Icons.videocam,
-                                                color: isCameraOn ? const Color(0xFF9CA3AF) : const Color(0xFF4B4B4B),
+                                                color:
+                                                    isCameraOn
+                                                        ? const Color(0xFF9CA3AF)
+                                                        : const Color(0xFF4B4B4B),
                                                 size: 18,
                                               ),
                                             ),
@@ -235,7 +243,10 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                           // Gas quantity card
                                           Expanded(
                                             child: Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                              padding: const EdgeInsets.symmetric(
+                                                horizontal: 12,
+                                                vertical: 10,
+                                              ),
                                               decoration: BoxDecoration(
                                                 color: bgButton,
                                                 borderRadius: BorderRadius.circular(16),
@@ -244,7 +255,8 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.spaceBetween,
                                                     children: [
                                                       const Text(
                                                         'Gas quantity',
@@ -291,7 +303,10 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                                   ),
                                                   child: Icon(
                                                     Icons.notifications,
-                                                    color: hasNotification ? const Color(0xFF9CA3AF) : const Color(0xFF4B4B4B),
+                                                    color:
+                                                        hasNotification
+                                                            ? const Color(0xFF9CA3AF)
+                                                            : const Color(0xFF4B4B4B),
                                                     size: 18,
                                                   ),
                                                 ),
@@ -310,14 +325,21 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                                           const SizedBox(width: 12),
                                           // Temperature card
                                           Container(
-                                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 12,
+                                              vertical: 10,
+                                            ),
                                             decoration: BoxDecoration(
                                               color: bgButton,
                                               borderRadius: BorderRadius.circular(16),
                                             ),
                                             child: Row(
                                               children: const [
-                                                Icon(Icons.thermostat, color: Color(0xFF9CA3AF), size: 16),
+                                                Icon(
+                                                  Icons.thermostat,
+                                                  color: Color(0xFF9CA3AF),
+                                                  size: 16,
+                                                ),
                                                 SizedBox(width: 6),
                                                 Text(
                                                   '22 c',
@@ -354,16 +376,17 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
         child: Container(
           width: 320,
           height: 60,
-          decoration: BoxDecoration(
-            color: bgCard,
-            borderRadius: BorderRadius.circular(40),
-          ),
+          decoration: BoxDecoration(color: bgCard, borderRadius: BorderRadius.circular(40)),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: Icon(Icons.grid_view, color: _selectedBottomIndex == 0 ? mintGreen : const Color(0xFF9CA3AF), size: 24),
+                icon: Icon(
+                  Icons.grid_view,
+                  color: _selectedBottomIndex == 0 ? mintGreen : const Color(0xFF9CA3AF),
+                  size: 24,
+                ),
                 onPressed: () => onBottomNavTap(0),
                 splashRadius: 24,
               ),
@@ -376,23 +399,27 @@ class _GasLevelsHomePageState extends State<GasLevelsHomePage> {
                     color: mintGreen,
                     shape: BoxShape.circle,
                     boxShadow: [
-                      BoxShadow(
-                        color: mintGreen.withOpacity(0.6),
-                        blurRadius: 8,
-                        spreadRadius: 1,
-                      ),
+                      BoxShadow(color: mintGreen.withAlpha(153), blurRadius: 8, spreadRadius: 1),
                     ],
                   ),
                   child: const Icon(Icons.remove_red_eye, color: Colors.black, size: 28),
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.settings, color: _selectedBottomIndex == 2 ? mintGreen : const Color(0xFF9CA3AF), size: 24),
+                icon: Icon(
+                  Icons.settings,
+                  color: _selectedBottomIndex == 2 ? mintGreen : const Color(0xFF9CA3AF),
+                  size: 24,
+                ),
                 onPressed: () => onBottomNavTap(2),
                 splashRadius: 24,
               ),
               IconButton(
-                icon: Icon(Icons.list, color: _selectedBottomIndex == 3 ? mintGreen : const Color(0xFF9CA3AF), size: 24),
+                icon: Icon(
+                  Icons.list,
+                  color: _selectedBottomIndex == 3 ? mintGreen : const Color(0xFF9CA3AF),
+                  size: 24,
+                ),
                 onPressed: () => onBottomNavTap(3),
                 splashRadius: 24,
               ),
