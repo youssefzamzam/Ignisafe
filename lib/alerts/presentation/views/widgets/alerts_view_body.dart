@@ -3,8 +3,27 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:ignisafe/core/utils/app_colors.dart';
 
-class AlertsViewBody extends StatelessWidget {
+import 'alert_details_view.dart';
+
+class AlertsViewBody extends StatefulWidget {
   const AlertsViewBody({super.key});
+
+  @override
+  State<AlertsViewBody> createState() => _AlertsViewBodyState();
+}
+
+class _AlertsViewBodyState extends State<AlertsViewBody> {
+  void _showAlertBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: const Color(0xFF232323),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      ),
+      builder: (_) => const AlertDetailsBottomSheet(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +54,9 @@ class AlertsViewBody extends StatelessWidget {
           InkWell(
             borderRadius: BorderRadius.circular(16), // match card's border radius
             onTap: () {
-              log("Card tapped!");
+              setState(() {
+                _showAlertBottomSheet(context);
+              });
             },
             child: Card(
               color: Color(0xFF1E1E1E),

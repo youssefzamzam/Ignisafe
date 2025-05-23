@@ -1,52 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const AlertDetailsView());
-}
-
-class AlertDetailsView extends StatelessWidget {
-  const AlertDetailsView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Alert Details',
-      theme: ThemeData.dark(),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  void _showAlertBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: const Color(0xFF232323),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
-      ),
-      builder: (_) => const AlertDetailsBottomSheet(),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xff181818),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => _showAlertBottomSheet(context),
-          child: const Text('Show Alert Details'),
-        ),
-      ),
-    );
-  }
-}
-
 class AlertDetailsBottomSheet extends StatelessWidget {
   const AlertDetailsBottomSheet({super.key});
 
