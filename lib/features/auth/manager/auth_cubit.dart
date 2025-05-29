@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ignisafe/auth/data/repo/auth_repo.dart';
-import 'package:ignisafe/auth/manager/auth_state.dart';
+import 'package:ignisafe/features/auth/data/repo/auth_repo.dart';
+import 'package:ignisafe/features/auth/manager/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   final AuthRepository _authRepository;

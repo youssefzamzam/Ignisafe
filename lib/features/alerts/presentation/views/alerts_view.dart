@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ignisafe/alerts/presentation/views/widgets/alerts_view_body.dart';
+import 'package:ignisafe/features/alerts/presentation/views/widgets/alerts_view_body.dart';
 
 class AlertsView extends StatelessWidget {
   const AlertsView({super.key});

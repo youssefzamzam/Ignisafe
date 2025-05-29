@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ignisafe/auth/manager/auth_cubit.dart';
-import 'package:ignisafe/auth/data/repo/auth_repo.dart';
-import 'package:ignisafe/auth/presentation/views/widgets/auth_view_body.dart';
+import 'package:ignisafe/features/auth/manager/auth_cubit.dart';
+import 'package:ignisafe/features/auth/data/repo/auth_repo.dart';
+import 'package:ignisafe/features/auth/presentation/views/widgets/auth_view_body.dart';
 
 
 class AuthView extends StatelessWidget {

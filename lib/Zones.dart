@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const GasLevelsApp());
-}
+
 
 class GasLevelsApp extends StatelessWidget {
   const GasLevelsApp({super.key});

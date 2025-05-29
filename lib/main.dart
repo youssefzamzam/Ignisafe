@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ignisafe/auth/presentation/views/auth_view.dart';
 import 'package:ignisafe/core/helper/on_generate_route.dart';
 import 'package:ignisafe/core/utils/themes.dart';
-import 'package:ignisafe/dashboard/presentation/views/dashboard_view.dart';
-import 'package:ignisafe/management%20users/presentation/views/managementusers_view.dart';
+import 'package:ignisafe/features/dashboard/presentation/views/dashboard_view.dart';
+import 'package:ignisafe/features/zones/presentation/views/zones_view.dart';
 
-import 'alerts/presentation/views/alerts_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +37,7 @@ class _IgnisafeState extends State<Ignisafe> {
           (context, _) => MaterialApp(
             debugShowCheckedModeBanner: false,
             onGenerateRoute: onGenerateRoute,
-            initialRoute: DashboardView.routeName,
+            initialRoute: ZonesView.routeName,
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode: _themeMode,

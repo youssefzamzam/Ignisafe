@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ignisafe/core/utils/app_colors.dart';
-
 import 'alert_details_view.dart';
 
 class AlertsViewBody extends StatefulWidget {
@@ -18,8 +16,8 @@ class _AlertsViewBodyState extends State<AlertsViewBody> {
       context: context,
       isScrollControlled: true,
       backgroundColor: const Color(0xFF232323),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+      shape:  RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.r)),
       ),
       builder: (_) => const AlertDetailsBottomSheet(),
     );
