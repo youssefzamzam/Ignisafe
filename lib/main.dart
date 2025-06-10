@@ -37,7 +37,7 @@ class _IgnisafeState extends State<Ignisafe> {
           (context, _) => MaterialApp(
             debugShowCheckedModeBanner: false,
             onGenerateRoute: onGenerateRoute,
-            initialRoute: ZonesView.routeName,
+            initialRoute: DashboardView.routeName,
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode: _themeMode,
